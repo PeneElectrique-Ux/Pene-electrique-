@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Pene Électrique – Innovation & Réparation à Thiès</title>
+
+<meta name="description" content="Pene Électrique est spécialisé dans la réparation, le diagnostic et l’optimisation de vélos électriques, trottinettes et systèmes électroniques à Thiès, Sénégal.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Pene Électrique">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* ==================== CSS COMPLET ==================== */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Roboto',sans-serif}
+body{background:#f4f4f4;color:#333;line-height:1.6}
+a{text-decoration:none;color:inherit}
+
+:root{
+--primary:#005f73;
+--secondary:#0a9396;
+--accent:#ee9b00;
+--light:#ffffff;
+--radius:12px;
+}
+
+.container{width:90%;max-width:1200px;margin:auto}
+.section{padding:80px 0}
+.section-title{text-align:center;font-size:2rem;margin-bottom:40px;color:var(--primary)}
+
+.btn{padding:14px 28px;border:none;border-radius:var(--radius);cursor:pointer;font-weight:500}
+.btn-primary{background:var(--accent);color:#000}
+.btn-full{width:100%}
+
+/* NAVBAR */
+nav{background:var(--light);position:fixed;top:0;width:100%;z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{font-size:1.4rem;font-weight:700;color:var(--primary)}
+.nav-links{display:flex;gap:20px}
+.nav-links a{font-weight:500}
+.mobile-menu-btn{display:none;background:none;border:none}
+
+/* HERO */
+.hero{height:100vh;background:linear-gradient(120deg,var(--primary),var(--secondary));display:flex;align-items:center;justify-content:center;color:#fff;text-align:center}
+.hero h1{font-size:3rem}
+.hero p{margin:15px 0;font-size:1.2rem}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.service-card{background:#fff;padding:25px;border-radius:var(--radius);box-shadow:0 4px 12px rgba(0,0,0,.1);text-align:center}
+.service-card i{width:40px;height:40px;color:var(--primary)}
+.service-card h3{margin:15px 0}
+
+/* FORM */
+.form-group{margin-bottom:20px}
+.form-input{width:100%;padding:12px;border-radius:8px;border:1px solid #ccc}
+
+/* CONTACT */
+.contact-section{background:var(--primary);color:#fff}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.contact-card{background:#fff;color:#000;padding:20px;border-radius:var(--radius);text-align:center}
+
+/* FOOTER */
+footer{background:#111;color:#fff;text-align:center;padding:30px}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="container">
+    <div class="logo">Pene Électrique</div>
+    <div class="nav-links">
+      <a href="#accueil">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#reservation">Réservation</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="mobile-menu-btn"><i data-lucide="menu"></i></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="accueil" class="hero">
+  <div>
+    <h1>Pene Électrique</h1>
+    <p>Innovation – Réparation – Performance</p>
+    <button class="btn btn-primary">
+      <i data-lucide="calendar-check"></i> Réserver maintenant
+    </button>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section">
+  <div class="container">
+    <h2 class="section-title">Nos Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <i data-lucide="zap"></i>
+        <h3>Diagnostic électrique</h3>
+        <p>Analyse complète et précise.</p>
+      </div>
+      <div class="service-card">
+        <i data-lucide="cpu"></i>
+        <h3>Contrôleurs & cartes</h3>
+        <p>Réparation électronique avancée.</p>
+      </div>
+      <div class="service-card">
+        <i data-lucide="bike"></i>
+        <h3>Vélos & trottinettes</h3>
+        <p>Maintenance et réparation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESERVATION -->
+<section id="reservation" class="section">
+  <div class="container">
+    <h2 class="section-title">Réservation</h2>
+    <form>
+      <div class="form-group">
+        <input class="form-input" type="text" placeholder="Nom complet" required>
+      </div>
+      <div class="form-group">
+        <input class="form-input" type="tel" placeholder="Téléphone / WhatsApp" required>
+      </div>
+      <button class="btn btn-primary btn-full">Confirmer</button>
+    </form>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section contact-section">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i data-lucide="map-pin"></i>
+        <p>Thiès, Sénégal</p>
+      </div>
+      <a href="https://wa.me/221705567447" class="contact-card">
+        <i data-lucide="phone"></i>
+        <p>705 567 447</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Pene Électrique – Tous droits réservés</p>
+</footer>
+
+<!-- LUCIDE ICONS -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+lucide.createIcons();
+</script>
+
+</body>
+</html>
