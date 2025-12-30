@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>Pene Électrique – Réservation</title>
+  <meta name="description" content="Pene Électrique - Réservation via WhatsApp">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Style principal -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="mainNav">
+    <div class="container">
+      <a class="logo" href="#">Pene Électrique</a>
+
+      <div class="nav-links" id="navLinks">
+        <a class="nav-link" href="#accueil">Accueil</a>
+        <a class="nav-link" href="#services">Services</a>
+        <a class="nav-link" href="#reservation">Réservation</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileBtn" aria-expanded="false" aria-label="Ouvrir le menu">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="#accueil">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#reservation">Réservation</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="accueil" class="hero">
+    <div class="hero-content container">
+      <h1>Pene Électrique</h1>
+      <p>Innovation – Réparation – Performance</p>
+      <button class="btn btn-lg" id="openReservation">
+        <i data-lucide="calendar-check"></i> Réserver maintenant
+      </button>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2 class="section-title">Nos Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <i data-lucide="zap" class="service-icon"></i>
+          <div class="service-title">Diagnostic électrique</div>
+          <div class="service-desc">Analyse complète et précise.</div>
+        </div>
+
+        <div class="service-card">
+          <i data-lucide="cpu" class="service-icon"></i>
+          <div class="service-title">Contrôleurs & cartes</div>
+          <div class="service-desc">Réparation électronique avancée.</div>
+        </div>
+
+        <div class="service-card">
+          <i data-lucide="bike" class="service-icon"></i>
+          <div class="service-title">Vélos & trottinettes</div>
+          <div class="service-desc">Maintenance et réparation.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVATION (section visible pour référencement) -->
+  <section id="reservation" class="section bg-light">
+    <div class="container">
+      <h2 class="section-title">Réservation</h2>
+      <div class="reservation-form">
+        <form id="reservationFormInline">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" for="nameInline">Nom complet</label>
+              <input id="nameInline" class="form-input" type="text" placeholder="Nom complet" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phoneInline">Téléphone / WhatsApp</label>
+              <input id="phoneInline" class="form-input" type="tel" placeholder="Téléphone / WhatsApp" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="form-label">Type de diagnostic (choix multiples)</div>
+            <div class="services-selector" id="servicesSelectorInline">
+              <label class="service-option" data-value="Diagnostic électrique">
+                <div class="icon">
+                  <i data-lucide="zap"></i>
+                </div>
+                <div class="service-option-label">Diagnostic électrique</div>
+                <div class="toggle-switch"><input type="checkbox" class="service-checkbox" hidden></div>
+              </label>
+
+              <label class="service-option" data-value="Contrôleurs & cartes">
+                <div class="icon"><i data-lucide="cpu"></i></div>
+                <div class="service-option-label">Contrôleurs & cartes</div>
+                <div class="toggle-switch"><input type="checkbox" class="service-checkbox" hidden></div>
+              </label>
+
+              <label class="service-option" data-value="Vélos & trottinettes">
+                <div class="icon"><i data-lucide="bike"></i></div>
+                <div class="service-option-label">Vélos & trottinettes</div>
+                <div class="toggle-switch"><input type="checkbox" class="service-checkbox" hidden></div>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="notesInline">Remarques (optionnel)</label>
+            <textarea id="notesInline" class="form-input" rows="3" placeholder="Détaillez le problème, modèle, etc."></textarea>
+          </div>
+
+          <div style="display:flex;gap:1rem;flex-wrap:wrap">
+            <button type="submit" class="btn btn-full">Confirmer (WhatsApp)</button>
+            <button type="button" class="btn" id="openModalFromInline">Ouvrir modal</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="section-title text-white">Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <i data-lucide="map-pin" class="icon"></i>
+          <p>Thiès, Sénégal</p>
+        </div>
+
+        <a class="contact-card" href="https://wa.me/221705567447" target="_blank" rel="noopener">
+          <i data-lucide="phone" class="icon"></i>
+          <p>705 567 447</p>
+        </a>
+
+        <div class="contact-card">
+          <i data-lucide="clock" class="icon"></i>
+          <p>Lun–Sam: 9h – 18h</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Pene Électrique – Tous droits réservés</p>
+    </div>
+  </footer>
+
+  <!-- Modal réservation (overlay) -->
+  <div class="modal-backdrop hidden" id="reservationModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Fermer">&times;</button>
+      <h3 id="modalTitle">Réserver via WhatsApp</h3>
+
+      <form id="reservationForm">
+        <div class="form-group">
+          <label class="form-label" for="name">Nom complet</label>
+          <input id="name" class="form-input" type="text" placeholder="Nom complet" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="phone">Téléphone / WhatsApp</label>
+          <input id="phone" class="form-input" type="tel" placeholder="Téléphone / WhatsApp" required>
+        </div>
+
+        <div class="form-group">
+          <div class="form-label">Type de diagnostic</div>
+          <div class="services-selector" id="servicesSelector">
+            <label class="service-option" data-value="Diagnostic électrique">
+              <div class="icon"><i data-lucide="zap"></i></div>
+              <div class="service-option-label">Diagnostic électrique</div>
+              <div class="toggle-switch"><input type="checkbox" class="service-checkbox" hidden></div>
+            </label>
+
+            <label class="service-option" data-value="Contrôleurs & cartes">
+              <div class="icon"><i data-lucide="cpu"></i></div>
+              <div class="service-option-label">Contrôleurs & cartes</div>
+              <div class="toggle-switch"><input type="checkbox" class="service-checkbox" hidden></div>
+            </label>
+
+            <label class="service-option" data-value="Vélos & trottinettes">
+              <div class="icon"><i data-lucide="bike"></i></div>
+              <div class="service-option-label">Vélos & trottinettes</div>
+              <div class="toggle-switch"><input type="checkbox" class="service-checkbox" hidden></div>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="notes">Remarques</label>
+          <textarea id="notes" class="form-input" rows="3"></textarea>
+        </div>
+
+        <div style="display:flex;gap:1rem;align-items:center">
+          <button type="submit" class="btn btn-full">Envoyer sur WhatsApp</button>
+          <button type="button" class="btn" id="modalCancel">Annuler</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Notification -->
+  <div id="notification" class="notification hidden" role="status" aria-live="polite">
+    <span id="notificationText"></span>
+    <button class="notification-close" id="notificationClose" aria-label="Fermer notification">&times;</button>
+  </div>
+
+  <!-- Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Script d'interaction -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.lucide) lucide.createIcons();
+
+      // Mobile menu
+      const mobileBtn = document.getElementById('mobileBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileBtn && mobileBtn.addEventListener('click', () => {
+        const open = mobileMenu.classList.toggle('active');
+        mobileBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        mobileMenu.setAttribute('aria-hidden', open ? 'false' : 'true');
+      });
+
+      // Scrolled nav style
+      const nav = document.getElementById('mainNav');
+      const onScroll = () => {
+        if (window.scrollY > 20) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+      };
+      window.addEventListener('scroll', onScroll);
+      onScroll();
+
+      // Modal elements
+      const openReservation = document.getElementById('openReservation');
+      const reservationModal = document.getElementById('reservationModal');
+      const modalClose = document.getElementById('modalClose');
+      const modalCancel = document.getElementById('modalCancel');
+      const openModalFromInline = document.getElementById('openModalFromInline');
+
+      function openModal() {
+        reservationModal.classList.remove('hidden');
+        reservationModal.setAttribute('aria-hidden','false');
+        document.body.style.overflow = 'hidden';
+        // focus first input
+        const firstInput = reservationModal.querySelector('.form-input');
+        firstInput && firstInput.focus();
+      }
+      function closeModal() {
+        reservationModal.classList.add('hidden');
+        reservationModal.setAttribute('aria-hidden','true');
+        document.body.style.overflow = '';
+      }
+
+      openReservation && openReservation.addEventListener('click', (e) => {
+        e.preventDefault();
+        openModal();
+      });
+      openModalFromInline && openModalFromInline.addEventListener('click', openModal);
+      modalClose && modalClose.addEventListener('click', closeModal);
+      modalCancel && modalCancel.addEventListener('click', closeModal);
+
+      // Click outside modal to close
+      reservationModal.addEventListener('click', (e) => {
+        if (e.target === reservationModal) closeModal();
+      });
+
+      // Service option toggling (both inline and modal)
+      function setupServiceToggles(root) {
+        const options = root.querySelectorAll('.service-option');
+        options.forEach(opt => {
+          const checkbox = opt.querySelector('.service-checkbox');
+          // Ensure label clickable
+          opt.addEventListener('click', (e) => {
+            // don't trigger multiple toggles if click on input
+            if (e.target.tagName === 'A') return;
+            const checked = !checkbox.checked;
+            checkbox.checked = checked;
+            opt.classList.toggle('selected', checked);
+            // small pulse animation
+            opt.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.03)' }, { transform: 'scale(1)' }], { duration: 220 });
+          });
+        });
+      }
+
+      setupServiceToggles(document.getElementById('servicesSelector'));
+      setupServiceToggles(document.getElementById('servicesSelectorInline'));
+
+      // Helper: collect selected service labels
+      function getSelectedServices(root) {
+        const selected = [];
+        root.querySelectorAll('.service-option.selected').forEach(el => {
+          selected.push(el.getAttribute('data-value'));
+        });
+        return selected;
+      }
+
+      // Notification helpers
+      const notification = document.getElementById('notification');
+      const notificationText = document.getElementById('notificationText');
+      const notificationClose = document.getElementById('notificationClose');
+      function showNotification(text, isError = false) {
+        notificationText.textContent = text;
+        notification.classList.remove('hidden');
+        if (isError) notification.classList.add('notification-error'); else notification.classList.remove('notification-error');
+      }
+      function hideNotification() {
+        notification.classList.add('hidden');
+      }
+      notificationClose.addEventListener('click', hideNotification);
+
+      // WhatsApp sending logic
+      // Use this number (change here if you want another): +221705567447
+      const waNumber = '221705567447';
+
+      function buildWhatsAppUrl({ name, phone, services, notes }) {
+        let text = `Bonjour,%0AJe souhaite réserver un service chez *Pene Électrique*.%0A`;
+        text += `Nom: ${name}%0A`;
+        text += `Téléphone: ${phone}%0A`;
+        if (services.length) {
+          text += `Service(s): ${services.join(', ')}%0A`;
+        }
+        if (notes && notes.trim().length) {
+          text += `Remarques: ${notes}%0A`;
+        }
+        text += `%0AMerci !`;
+        return `https://wa.me/${waNumber}?text=${encodeURIComponent(decodeURIComponent(text))}`;
+      }
+
+      // Inline form submit
+      const inlineForm = document.getElementById('reservationFormInline');
+      inlineForm && inlineForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const name = document.getElementById('nameInline').value.trim();
+        const phone = document.getElementById('phoneInline').value.trim();
+        if (!name || !phone) {
+          showNotification('Merci de renseigner votre nom et téléphone.', true);
+          return;
+        }
+        const services = getSelectedServices(document.getElementById('servicesSelectorInline'));
+        const notes = document.getElementById('notesInline').value.trim();
+        if (services.length === 0) {
+          showNotification('Sélectionnez au moins un type de diagnostic.', true);
+          return;
+        }
+        const url = buildWhatsAppUrl({ name, phone, services, notes });
+        showNotification('Ouverture de WhatsApp...', false);
+        setTimeout(() => {
+          window.open(url, '_blank');
+          hideNotification();
+        }, 600);
+      });
+
+      // Modal form submit
+      const modalForm = document.getElementById('reservationForm');
+      modalForm && modalForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        if (!name || !phone) {
+          showNotification('Merci de renseigner votre nom et téléphone.', true);
+          return;
+        }
+        const services = getSelectedServices(document.getElementById('servicesSelector'));
+        const notes = document.getElementById('notes').value.trim();
+        if (services.length === 0) {
+          showNotification('Sélectionnez au moins un type de diagnostic.', true);
+          return;
+        }
+        const url = buildWhatsAppUrl({ name, phone, services, notes });
+        showNotification('Ouverture de WhatsApp...', false);
+        setTimeout(() => {
+          window.open(url, '_blank');
+          hideNotification();
+          closeModal();
+        }, 600);
+      });
+
+    }); // DOMContentLoaded end
+  </script>
+
+  <style>
+    /* Small inline style only to ensure modal works if style.css not loaded */
+    .hidden { display: none; }
+  </style>
+</body>
+                                                                        </html>
